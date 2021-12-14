@@ -1,0 +1,39 @@
+body, 
+html {
+    font-family: 'Roboto', sans-serif;
+}
+#header {
+    width: 100%;
+    background-color: transparent;
+    transition: background ease-out 0.2s;
+}
+#header .navbar-collapse{
+    width: auto;
+}
+#header .nav-link {
+    text-transform: uppercase;
+    font-weight: 500;
+    padding-left: 0;
+    padding-right: 0;
+    color: black;
+    border-bottom: solid 4px transparent;
+}
+#header .nav-link:hover {
+    border-bottom: solid 4px var(--primary);
+    color: var(--secondary);
+   
+
+}
+#logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 10px;
+    background-color: var(--primary);
+    background-size: 50px;
+    
+}
+#slider {
+    background: url(../assets/slider-bg.svg) no-repeat center bottom;
+    background-size: contain;
+}
