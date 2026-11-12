@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rafael Campelo | Portfólio</title>
+  <meta name="description" content="Portfólio e currículo de Rafael Campelo.">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topo">
+    <a class="marca" href="#inicio" aria-label="Início"><img src="assets/logo.svg" alt="" width="40" height="40"></a>
+    <nav aria-label="Principal">
+      <a href="#projetos">Projetos</a>
+      <a href="#curriculo">Currículo</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <p class="meta" id="local"></p>
+      <h1 id="nome"></h1>
+      <p class="cargo" id="cargo"></p>
+      <p class="resumo" id="resumo"></p>
+      <div class="acoes">
+        <a class="botao" href="#projetos">Ver projetos</a>
+        <button class="botao secundario" id="imprimir" type="button">Baixar currículo (PDF)</button>
+      </div>
+    </section>
+
+    <section id="projetos">
+      <h2>Projetos</h2>
+      <div class="grade" id="lista-projetos"></div>
+    </section>
+
+    <section id="curriculo">
+      <h2>Currículo</h2>
+      <div class="colunas">
+        <div>
+          <h4>Experiência</h4>
+          <div id="lista-experiencias"></div>
+          <h4>Formação</h4>
+          <div id="lista-formacao"></div>
+        </div>
+        <div>
+          <h4>Habilidades</h4>
+          <div id="lista-habilidades"></div>
+          <h4>Idiomas</h4>
+          <ul class="simples" id="lista-idiomas"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <h2>Contato</h2>
+      <ul class="contatos" id="lista-contatos"></ul>
+    </section>
+  </main>
+
+  <footer>© <span id="ano"></span> <span id="rodape-nome"></span></footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

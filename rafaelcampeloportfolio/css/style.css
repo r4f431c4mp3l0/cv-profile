@@ -1,0 +1,99 @@
+:root {
+  --fundo: #f6f4ef;
+  --texto: #16161a;
+  --suave: #6b6b76;
+  --linha: #dcd8ce;
+  --cartao: #ffffff;
+  --destaque: #2b4bff;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo: #121214;
+    --texto: #f1efe9;
+    --suave: #a09fa8;
+    --linha: #2c2c33;
+    --cartao: #1b1b20;
+    --destaque: #8fa2ff;
+  }
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+a { color: inherit; }
+main, .topo, footer { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+.topo {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-top: 20px; padding-bottom: 20px;
+}
+.marca img { display: block; }
+.topo nav { display: flex; gap: 22px; }
+.topo nav a { text-decoration: none; font-weight: 500; }
+.topo nav a:hover { color: var(--destaque); }
+
+section { padding: 64px 0; border-top: 1px solid var(--linha); }
+.hero { border-top: 0; padding: 72px 0 88px; }
+
+h1 { font-size: clamp(2.6rem, 8vw, 5.2rem); line-height: 1; letter-spacing: -0.03em; margin: 8px 0 12px; }
+h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); letter-spacing: -0.02em; margin: 0 0 28px; }
+h3 { font-size: 1.1rem; margin: 2px 0 6px; }
+h4 { font-size: .8rem; text-transform: uppercase; letter-spacing: .12em; color: var(--suave); margin: 32px 0 14px; }
+h4:first-child { margin-top: 0; }
+p { margin: 0 0 8px; }
+
+.meta { color: var(--suave); font-size: .85rem; letter-spacing: .04em; }
+.cargo { font-size: 1.35rem; font-weight: 600; color: var(--destaque); }
+.resumo { max-width: 60ch; font-size: 1.1rem; }
+
+.acoes { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.botao {
+  display: inline-block; padding: 12px 20px; border-radius: 999px;
+  background: var(--texto); color: var(--fundo); border: 1px solid var(--texto);
+  font: inherit; font-weight: 600; text-decoration: none; cursor: pointer;
+}
+.botao.secundario { background: transparent; color: var(--texto); }
+.botao:hover { background: var(--destaque); border-color: var(--destaque); color: #fff; }
+
+.grade { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
+.card {
+  display: block; background: var(--cartao); border: 1px solid var(--linha);
+  border-radius: 16px; padding: 16px; text-decoration: none;
+  transition: transform .15s ease, border-color .15s ease;
+}
+a.card:hover { transform: translateY(-3px); border-color: var(--destaque); }
+.thumb { aspect-ratio: 4 / 3; border-radius: 10px; background: var(--linha); overflow: hidden; margin-bottom: 14px; }
+.thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.colunas { display: grid; grid-template-columns: 2fr 1fr; gap: 48px; }
+.item { margin-bottom: 22px; }
+.item ul { margin: 6px 0 0; padding-left: 20px; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag { border: 1px solid var(--linha); border-radius: 999px; padding: 3px 12px; font-size: .9rem; }
+.simples, .contatos { list-style: none; margin: 0; padding: 0; }
+.contatos { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+.contatos li { display: flex; flex-direction: column; overflow-wrap: anywhere; }
+.contatos a { font-weight: 600; }
+
+footer { padding-top: 28px; padding-bottom: 40px; color: var(--suave); font-size: .9rem; border-top: 1px solid var(--linha); }
+
+@media (max-width: 720px) {
+  .colunas { grid-template-columns: 1fr; gap: 0; }
+  .colunas > div + div { margin-top: 32px; }
+  .topo nav { gap: 14px; font-size: .95rem; }
+}
+
+/* Impressão: gera o currículo em PDF pelo navegador */
+@media print {
+  :root { --fundo: #fff; --texto: #000; --suave: #555; --linha: #ccc; --cartao: #fff; --destaque: #000; }
+  body { font-size: 11pt; }
+  .topo, .acoes, #projetos, footer { display: none; }
+  section, .hero { padding: 14pt 0; }
+  h1 { font-size: 26pt; }
+  .item { break-inside: avoid; }
+}
