@@ -1,39 +1,28 @@
 // Todo o conteúdo do site fica aqui. Edite este arquivo para atualizar o portfólio e o currículo.
-// Campos com "A PREENCHER" aguardam os dados do currículo completo.
+// Campos vazios ("" ou []) não aparecem na página; seções vazias mostram "Em breve".
 window.PORTFOLIO = {
   nome: "Rafael Campelo",
-  cargo: "A PREENCHER: título profissional",
-  resumo: "A PREENCHER: resumo profissional em duas ou três frases.",
-  local: "A PREENCHER: cidade, estado",
+  cargo: "Designer · UX/UI, identidade visual e motion",
+  resumo: "",
+  local: "",
   contatos: [
-    { rotulo: "E-mail", texto: "A PREENCHER", url: "" },
-    { rotulo: "LinkedIn", texto: "A PREENCHER", url: "" },
-    { rotulo: "Behance", texto: "A PREENCHER", url: "" },
-    { rotulo: "Instagram", texto: "A PREENCHER", url: "" }
+    { rotulo: "GitHub", texto: "r4f431c4mp3l0", url: "https://github.com/r4f431c4mp3l0" }
   ],
   projetos: [
     {
-      titulo: "A PREENCHER: nome do projeto",
-      categoria: "Categoria",
-      ano: "Ano",
-      descricao: "A PREENCHER: desafio, seu papel e resultado.",
-      imagem: "",
+      titulo: "Rango Veggie",
+      categoria: "UX/UI · App mobile",
+      ano: "",
+      descricao: "Interface de aplicativo mobile. Estudo de caso completo em breve.",
+      imagem: "assets/rango-veggie.gif",
       url: ""
     }
   ],
-  experiencias: [
-    {
-      cargo: "A PREENCHER: cargo",
-      empresa: "Empresa",
-      periodo: "mês/ano – mês/ano",
-      itens: ["A PREENCHER: principais entregas e resultados."]
-    }
-  ],
-  formacao: [
-    { curso: "A PREENCHER: curso", instituicao: "Instituição", periodo: "ano – ano" }
-  ],
+  experiencias: [],
+  formacao: [],
   habilidades: [
-    { grupo: "A PREENCHER: grupo de habilidades", itens: ["Habilidade"] }
+    { grupo: "Áreas", itens: ["UX/UI", "Identidade visual", "Motion design", "Mockups"] },
+    { grupo: "Ferramentas", itens: ["Adobe XD", "Photoshop", "Illustrator", "After Effects", "HTML e CSS"] }
   ],
-  idiomas: [{ idioma: "A PREENCHER", nivel: "nível" }]
+  idiomas: []
 };

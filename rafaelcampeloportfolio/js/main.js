@@ -11,9 +11,10 @@
 
   document.title = d.nome + " | Portfólio";
   $("nome").textContent = d.nome;
-  $("cargo").textContent = d.cargo;
-  $("resumo").textContent = d.resumo;
-  $("local").textContent = d.local;
+  ["cargo", "resumo", "local"].forEach(function (k) {
+    $(k).textContent = d[k];
+    $(k).hidden = !d[k];
+  });
   $("ano").textContent = new Date().getFullYear();
   $("rodape-nome").textContent = d.nome;
 
@@ -27,7 +28,7 @@
       thumb.appendChild(img);
     }
     card.appendChild(thumb);
-    card.appendChild(el("p", "meta", p.categoria + " · " + p.ano));
+    card.appendChild(el("p", "meta", [p.categoria, p.ano].filter(Boolean).join(" · ")));
     card.appendChild(el("h3", null, p.titulo));
     card.appendChild(el("p", null, p.descricao));
     $("lista-projetos").appendChild(card);
@@ -71,6 +72,11 @@
     if (c.url) { v.href = c.url; v.target = "_blank"; v.rel = "noopener"; }
     li.appendChild(v);
     $("lista-contatos").appendChild(li);
+  });
+
+  ["projetos", "experiencias", "formacao", "habilidades", "idiomas", "contatos"].forEach(function (k) {
+    var alvo = $("lista-" + k);
+    if (!alvo.children.length) alvo.appendChild(el(alvo.tagName === "UL" ? "li" : "p", "meta", "Em breve."));
   });
 
   $("imprimir").addEventListener("click", function () { window.print(); });
